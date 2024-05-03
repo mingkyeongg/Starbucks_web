@@ -5,6 +5,7 @@ body {
 	font-weight: 400;
 	line-height: 1.4; 
 	font-family: "Nanum Gothic", sans-serif;
+	height: 3000px;
 }
 
 img {
@@ -21,10 +22,75 @@ a {
 	position: relative;
 }
 
+.btn {
+	width: 130px;
+	padding: 10px;
+	border: 2px solid #333;
+	border-radius: 4px;
+	color: #333;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	display: block;
+	transition: .4s;
+}
+
+.btn:hover {
+	background-color: #333;
+	color: #FFF;
+}
+
+.btn.btn--reverse {
+	/* 반전된 버튼 */
+	background-color: #333;
+	color: #FFF;
+}
+
+.btn.btn--reverse:hover {
+	background-color: transparent;
+	color: #333;
+}
+
+.btn.btn--brown {
+	color: #592818;
+	border-color: #592818;
+}
+
+.btn.btn--brown:hover {
+	color: #FFF;
+	background-color: #592818;
+}
+
+.btn.btn--gold {
+	color: #D9AA8A;
+	border-color: #D9AA8A;
+}
+
+.btn.btn--gold:hover {
+	color: #FFF;
+	background-color: #D9AA8A;
+}
+
+.btn.btn--white {
+	color: #FFF;
+	border-color: #FFF;
+}
+
+.btn.btn--white:hover {
+	color: #333;
+	background-color: #FFF;
+}
+
 /* HEADER */
 header {
+	width: 100%;
 	background-color:  #f5f6f0;
 	border-bottom: 1px solid #c8c8c8;
+	position: fixed;
+	top: 0;
+	z-index: 9;
 }
 header > .inner { /* 가운데 정렬 헤더의 자식요소인 inner만 */
 	height: 120px; 
@@ -187,4 +253,201 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
 	color: #669900;
 	margin: 4px 0 14px;
+}
+
+header .badges {
+	position: absolute;
+	top: 132px;
+	right: 12px;
+}
+
+header .badges .badge {
+	border-radius: 10px;
+	overflow: hidden; /* 안에 들어있는 이미지가 넘치지 않도록 */
+	margin-bottom: 12px;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0,.15);
+	cursor: pointer;
+}
+
+/* VISUAL */
+
+.visual {
+	/* 헤더의 높이값 */
+	margin-top: 120px;
+	background-image: url("../images/visual_bg.jpg");
+	background-position: center;
+}
+
+.visual .inner {
+	height: 646px;
+}
+
+.visual .title {
+	/* 부모요소 inner */
+	position: absolute;
+	top: 88px;
+	left: -10px;
+}
+
+.visual .title .btn {
+	/* 구조상의 부모요소 : title */
+	position: absolute;
+	top: 259px;
+	left: 173px;
+}
+
+.visual .cup1.image {
+	position: absolute;
+	bottom: 0;
+	right: -47px;
+}
+
+.visual .cup1.text {
+	position: absolute;
+	top: 38px;
+	right: 171px;
+
+}
+
+.visual .cup2.image {
+	position: absolute;
+	bottom: 0;
+	right: 162px;
+
+}
+
+.visual .cup2.text {
+	position: absolute;
+	top: 321px;
+	right: 416px;
+	
+}
+
+.visual .spoon {
+	position: absolute;
+	bottom: 0;
+	left: 275px;
+}
+
+.visual .fade-in {
+	opacity: 0;
+}
+
+/* NOTICE */
+
+.notice {
+
+}
+
+.notice .notice-line {
+	position: relative;
+}
+
+.notice .notice-line .bg-left {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background-color: #333;
+}
+
+.notice .notice-line .bg-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background-color: #f6f5ef;
+}
+
+.notice .notice-line .inner {
+	height: 62px;
+	display: flex;
+}
+
+.notice .notice-line .inner__left {
+	width: 60%;
+	height: 100%;
+	background-color: #333;
+	display: flex;
+	align-items: center;
+}
+.notice .notice-line .inner__left h2{
+	color: #fff;
+	font-size: 17px;
+	font-weight: 700;
+	margin-right: 20px;
+}
+
+.notice .notice-line .inner__left .swiper-container {
+	height: 62px;
+	flex-grow: 1;
+}
+
+.notice .notice-line .inner__left .swiper-container .swiper-slide {
+	height: 62px;
+	display: flex;
+	align-items: center;
+}
+
+.notice .notice-line .inner__left .swiper-container .swiper-slide a {
+	color: #FFF;
+}
+
+.notice .notice-line .inner__left .notice-line__more {
+	width: 62px;
+	height: 62px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.notice .notice-line .inner__left .notice-line__more .material-icons {
+	color: #fff;
+	font-size: 30px;
+}
+
+.notice .notice-line .inner__right {
+	width: 40%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.notice .notice-line .inner__right  h2 {
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.notice .notice-line .inner__right .toggle-promotion {
+	width: 62px;
+	height: 62px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.notice .notice-line .inner__right .toggle-promotion .material-icons {
+	font-size: 30px;
+}
+
+.notice .promotion {
+	height: 693px;
+	background-color: #f6f5ef;
+	position: relative;
+}
+
+.notice .promotion .swiper-container {
+	width: 2477px;
+	height: 553px;
+	background-color: orange;
+	text-align: center;
+	font-size: 200px;
+	position: absolute;
+	top: 40px;
+	left: 50%;
+	margin-left: -1238.5px;
 }

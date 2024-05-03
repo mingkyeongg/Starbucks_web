@@ -14,3 +14,43 @@ searchInputEl.addEventListener('blur', function () {
 	searchEl.classList.remove('focused'); // 클래스 정보 제거
 	searchInputEl.setAttribute('placeholder', ''); // attribute : html의 속성
 });
+
+const badgeEl = document.querySelector('header .badges');
+
+window.addEventListener('scroll', _.throttle(function () { // 스크롤되면 function 실행
+	console.log('scroll!')
+	if(window.scrollY > 500) {
+		gsap.to(badgeEl, 0.6, {
+			opacity: 0,
+			display: 'none'
+		});
+	} else {
+		gsap.to(badgeEl, 0.6, {
+			opacity: 1,
+			display: 'block'
+		});
+	}
+}, 300));
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function (fadeEl, index) {
+	// gsap.to(요소, 지속시간, 옵션)
+	gsap.to(fadeEl, 1, {
+		delay: (index + 1) * .7, // 첫번째는 0.7초 뒤에 두번째는 1.4초 뒤에...
+		opacity: 1
+	});
+});
+
+// Swiper(선택자, 옵션)
+new Swiper('.notice-line .swiper-container', {
+	direction: 'vertical',
+	autoplay: true,
+	loop: true
+});
+
+new Swiper('.promotion .swiper-container', {
+	slidesPerView: 3,
+	spaceBetween: 10,
+	centerdSlides: true,
+	loop:true
+});
