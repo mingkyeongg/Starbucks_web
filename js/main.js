@@ -16,6 +16,7 @@ searchInputEl.addEventListener('blur', function () {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function () { // 스크롤되면 function 실행
 	console.log('scroll!')
@@ -24,13 +25,28 @@ window.addEventListener('scroll', _.throttle(function () { // 스크롤되면 fu
 			opacity: 0,
 			display: 'none'
 		});
+		// 버튼 보이기
+		gsap.to(toTopEl, 0.2, {
+			x: 0
+	});
 	} else {
 		gsap.to(badgeEl, 0.6, {
 			opacity: 1,
 			display: 'block'
 		});
+		// 버튼 숨기기
+		gsap.to(toTopEl, 0.2, {
+			x: 100
+	});
 	}
 }, 300));
+
+
+toTopEl.addEventListener('click', function () {
+	gsap.to(window, .7, {
+		scrollTo: 0 // 화면의 위치를 0으로
+	});
+});
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 fadeEls.forEach(function (fadeEl, index) {
